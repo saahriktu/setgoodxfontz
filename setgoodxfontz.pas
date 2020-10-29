@@ -1,4 +1,5 @@
-(* Program which extracts ~/.config/fontconfig/fonts.conf
+(* setgoodxfontz v0.2
+ Program which extracts ~/.config/fontconfig/fonts.conf
  Under GNU GPLv3
  2020 (c) saahriktu *)
 program setgoodxfontz;
@@ -17,6 +18,30 @@ begin
    end;
    assign(fptr, fntcfgfile);
    rewrite(fptr);
-   write(fptr, #$3c#$3f#$78#$6d#$6c#$20#$76#$65#$72#$73#$69#$6f#$6e#$3d#$27#$31#$2e#$30#$27#$3f#$3e#$a#$3c#$21#$44#$4f#$43#$54#$59#$50#$45#$20#$66#$6f#$6e#$74#$63#$6f#$6e#$66#$69#$67#$20#$53#$59#$53#$54#$45#$4d#$20#$27#$66#$6f#$6e#$74#$73#$2e#$64#$74#$64#$27#$3e#$a#$3c#$66#$6f#$6e#$74#$63#$6f#$6e#$66#$69#$67#$3e#$a#$9#$3c#$6d#$61#$74#$63#$68#$20#$74#$61#$72#$67#$65#$74#$3d#$22#$66#$6f#$6e#$74#$22#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$61#$6e#$74#$69#$61#$6c#$69#$61#$73#$22#$3e#$a#$9#$9#$9#$3c#$62#$6f#$6f#$6c#$3e#$74#$72#$75#$65#$3c#$2f#$62#$6f#$6f#$6c#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$65#$6d#$62#$65#$64#$64#$65#$64#$62#$69#$74#$6d#$61#$70#$22#$3e#$a#$9#$9#$9#$3c#$62#$6f#$6f#$6c#$3e#$66#$61#$6c#$73#$65#$3c#$2f#$62#$6f#$6f#$6c#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$68#$69#$6e#$74#$69#$6e#$67#$22#$3e#$a#$9#$9#$9#$3c#$62#$6f#$6f#$6c#$3e#$74#$72#$75#$65#$3c#$2f#$62#$6f#$6f#$6c#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$68#$69#$6e#$74#$73#$74#$79#$6c#$65#$22#$3e#$a#$9#$9#$9#$3c#$63#$6f#$6e#$73#$74#$3e#$68#$69#$6e#$74#$73#$6c#$69#$67#$68#$74#$3c#$2f#$63#$6f#$6e#$73#$74#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$6c#$63#$64#$66#$69#$6c#$74#$65#$72#$22#$3e#$a#$9#$9#$9#$3c#$63#$6f#$6e#$73#$74#$3e#$6c#$63#$64#$6c#$65#$67#$61#$63#$79#$3c#$2f#$63#$6f#$6e#$73#$74#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$9#$3c#$65#$64#$69#$74#$20#$6d#$6f#$64#$65#$3d#$22#$61#$73#$73#$69#$67#$6e#$22#$20#$6e#$61#$6d#$65#$3d#$22#$72#$67#$62#$61#$22#$3e#$a#$9#$9#$9#$3c#$63#$6f#$6e#$73#$74#$3e#$6e#$6f#$6e#$65#$3c#$2f#$63#$6f#$6e#$73#$74#$3e#$a#$9#$9#$3c#$2f#$65#$64#$69#$74#$3e#$a#$9#$3c#$2f#$6d#$61#$74#$63#$68#$3e#$a#$3c#$2f#$66#$6f#$6e#$74#$63#$6f#$6e#$66#$69#$67#$3e#$a);
+   writeln(fptr, '<?xml version=''1.0''?>');
+   writeln(fptr, '<!DOCTYPE fontconfig SYSTEM ''fonts.dtd''>');
+   writeln(fptr, '<fontconfig>');
+   writeln(fptr, '	<match target="font">');
+   writeln(fptr, '		<edit mode="assign" name="antialias">');
+   writeln(fptr, '			<bool>true</bool>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '		<edit mode="assign" name="embeddedbitmap">');
+   writeln(fptr, '			<bool>false</bool>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '		<edit mode="assign" name="hinting">');
+   writeln(fptr, '			<bool>true</bool>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '		<edit mode="assign" name="hintstyle">');
+   writeln(fptr, '			<const>hintslight</const>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '		<edit mode="assign" name="lcdfilter">');
+   writeln(fptr, '			<const>lcdlegacy</const>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '		<edit mode="assign" name="rgba">');
+   writeln(fptr, '			<const>none</const>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '	</match>');
+   writeln(fptr, '</fontconfig>');
    close(fptr);
 end.
+
