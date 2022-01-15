@@ -13,7 +13,6 @@ endif
 all:
 	$(PC) $(PFLAGS) setgoodxfontz.pas
 install:
-	if [ ! -d "$(DESTDIR)$(prefix)/bin" ]; then mkdir -p $(DESTDIR)$(prefix)/bin; fi
-	install -m755 setgoodxfontz $(DESTDIR)$(prefix)/bin
+	install -D -m755 setgoodxfontz $(DESTDIR)$(prefix)/bin/setgoodxfontz
 clean:
 	rm setgoodxfontz setgoodxfontz.dbg setgoodxfontz.o

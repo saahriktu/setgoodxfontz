@@ -1,7 +1,7 @@
-(* setgoodxfontz v0.2
+(* setgoodxfontz v0.3
  Program which extracts ~/.config/fontconfig/fonts.conf
  Under GNU GPLv3
- 2020 (c) saahriktu *)
+ 2020-2022 (c) saahriktu *)
 program setgoodxfontz;
 {$codepage UTF8}
 uses cwstring, sysutils;
@@ -41,7 +41,14 @@ begin
    writeln(fptr, '			<const>none</const>');
    writeln(fptr, '		</edit>');
    writeln(fptr, '	</match>');
+   writeln(fptr, '	<match target="pattern">');
+   writeln(fptr, '		<test qual="any" name="family">');
+   writeln(fptr, '			<string>Helvetica</string>');
+   writeln(fptr, '		</test>');
+   writeln(fptr, '		<edit name="family" mode="assign" binding="same">');
+   writeln(fptr, '			<string>Arimo</string>');
+   writeln(fptr, '		</edit>');
+   writeln(fptr, '	</match>');
    writeln(fptr, '</fontconfig>');
    close(fptr);
 end.
-
